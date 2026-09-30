@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>How fast are you?</title>
+<meta name="description" content="Click the moment the screen turns green. Five rounds, and a number you can compare with a blink, a sprinter and a tired adult." />
+<meta property="og:title" content="How fast are you?" />
+<meta property="og:description" content="Click the moment the screen turns green. Five rounds, one number." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b1120'/><circle cx='50' cy='50' r='26' fill='%2334d399'/></svg>" />
+</head>
+<body>
+  <main>
+    <!-- the stage is the game: it fills the screen and changes colour -->
+    <button id="stage" class="stage stage-idle" aria-live="polite">
+      <span class="stage-title" id="stage-title">How fast are you?</span>
+      <span class="stage-sub" id="stage-sub">Click when the screen turns green</span>
+      <span class="stage-big" id="stage-big"></span>
+    </button>
+
+    <section class="panel" id="summary" hidden>
+      <h2 id="summary-verdict"></h2>
+
+      <div class="figures">
+        <div><b id="fig-average">0</b><span>average</span></div>
+        <div><b id="fig-best">0</b><span>best</span></div>
+        <div><b id="fig-worst">0</b><span>worst</span></div>
+      </div>
+
+      <ul class="rounds" id="rounds"></ul>
+      <p class="compare" id="compare"></p>
+      <p class="false-starts" id="false-starts" hidden></p>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="again">Play again</button>
+        <button class="btn" id="download">Download your score</button>
+      </div>
+
+      <p class="best-ever" id="best-ever" hidden></p>
+    </section>
+
+    <section class="bench">
+      <h3>For scale</h3>
+      <ul id="benchmarks"></ul>
+      <p class="note">
+        Those are published figures for simple visual reaction time, not data from
+        people using this page — there is no server here to collect any.
+        Your times stay in your browser.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>No accounts, no tracking, nothing sent anywhere.
+      <a href="https://github.com/ProBurakElci/reflex" target="_blank" rel="noopener">Source code</a>
+    </p>
+  </footer>
+
+  <canvas id="card-canvas" width="1080" height="1350" hidden></canvas>
+
+  <script src="js/reflex.js"></script>
+  <script src="js/card.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
